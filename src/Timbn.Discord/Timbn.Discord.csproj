@@ -4,10 +4,24 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Company>Timbn</Company>
+    <PackageProjectUrl>https://github.com/gavinsteinhoff/Timbn.Discord</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/gavinsteinhoff/Timbn.Discord</RepositoryUrl>
+    <Version>1.0.0</Version>
+    <Authors>Gavin Steinhoff</Authors>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>AGPL-3.0-only </PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
