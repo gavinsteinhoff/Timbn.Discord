@@ -1,11 +1,4 @@
-﻿using Discord.Interactions;
-using Discord.WebSocket;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
-using Timbn.Discord.Interactions;
-
-namespace Timbn.Discord;
+﻿namespace Timbn.Discord;
 
 public static class TimbnDiscordExtensions
 {
@@ -16,7 +9,7 @@ public static class TimbnDiscordExtensions
         optionsAction?.Invoke(options);
         
         return services
-            .AddSingleton<TimbnDiscordOptions>(options)
+            .AddSingleton(options)
             .AddSingleton<TimbnDiscord>()
             .AddSingleton<DiscordSocketClient>()
             .AddSingleton<ITimbnInteractionHandler, T>()

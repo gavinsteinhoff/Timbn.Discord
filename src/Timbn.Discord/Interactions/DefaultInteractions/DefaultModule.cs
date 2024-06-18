@@ -1,6 +1,4 @@
-﻿using Discord.Interactions;
-
-namespace Timbn.Discord.Interactions.DefaultInteractions;
+﻿namespace Timbn.Discord.Interactions.DefaultInteractions;
 
 [Group("default", "Default Commands")]
 public class DefaultModule : InteractionModuleBase

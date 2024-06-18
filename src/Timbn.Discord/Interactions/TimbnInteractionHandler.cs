@@ -1,14 +1,11 @@
-﻿using Discord;
-using Discord.Interactions;
-using Discord.WebSocket;
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace Timbn.Discord.Interactions;
 
 public interface ITimbnInteractionHandler
 {
-    void AddLogger(Func<LogMessage, Task> logger);
-    Task InitializeAsync(TimbnDiscordOptions options);
+    internal void AddLogger(Func<LogMessage, Task> logger);
+    internal Task InitializeAsync(TimbnDiscordOptions options);
 }
 
 public abstract class TimbnInteractionHandler : ITimbnInteractionHandler
@@ -24,9 +21,9 @@ public abstract class TimbnInteractionHandler : ITimbnInteractionHandler
         _services = services;
     }
 
-    public void AddLogger(Func<LogMessage, Task> logger) => _handler.Log += logger;
+    void ITimbnInteractionHandler.AddLogger(Func<LogMessage, Task> logger) => _handler.Log += logger;
 
-    public async Task InitializeAsync(TimbnDiscordOptions options)
+    async Task ITimbnInteractionHandler.InitializeAsync(TimbnDiscordOptions options)
     {
         if (options.DevDiscordGuidId is not null)
         {

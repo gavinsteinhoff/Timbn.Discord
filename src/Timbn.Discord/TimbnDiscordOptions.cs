@@ -1,8 +1,4 @@
-﻿using Discord;
-using Microsoft.Extensions.Configuration;
-using Timbn.Discord.Interactions;
-
-namespace Timbn.Discord;
+﻿namespace Timbn.Discord;
 
 public class TimbnDiscordOptions
 {

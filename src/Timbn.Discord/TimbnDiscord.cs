@@ -1,11 +1,4 @@
-﻿using Discord;
-using Discord.WebSocket;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using System.Reflection.Metadata;
-using Timbn.Discord.Interactions;
-
-namespace Timbn.Discord;
+﻿namespace Timbn.Discord;
 
 internal class TimbnDiscord
 {
@@ -46,7 +39,7 @@ internal class TimbnDiscord
         if (options.DiscordBotToken is not null)
             return options.DiscordBotToken;
 
-        throw new ArgumentNullException("DiscordBotToken");
+        throw new ArgumentNullException(nameof(options), "Options items 'DiscordBotToken' is not present.");
     }
 
     private Task LogAsync(LogMessage message)
@@ -55,7 +48,7 @@ internal class TimbnDiscord
         return Task.CompletedTask;
     }
 
-    private LogLevel MapLogLevel(LogSeverity level) => level switch
+    private static LogLevel MapLogLevel(LogSeverity level) => level switch
     {
         LogSeverity.Critical => LogLevel.Critical,
         LogSeverity.Error => LogLevel.Error,
